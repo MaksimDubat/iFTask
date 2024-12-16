@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TestTask.Data;
+using TestTask.WebAPI.Registarations;
 
 namespace TestTask
 {
@@ -9,12 +10,11 @@ namespace TestTask
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            TestTaskRegistarations.RegisterRepositories(builder.Services, builder.Configuration);
+
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 
