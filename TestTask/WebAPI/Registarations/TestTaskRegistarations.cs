@@ -17,6 +17,7 @@ namespace TestTask.WebAPI.Registarations
                 options.UseSqlServer(connectionString));
 
             services.AddScoped<IBookService, BookService>();
+            services.AddScoped<IAuthorService, AuthorService>();
         }
     }
 }

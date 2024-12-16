@@ -6,7 +6,7 @@ using TestTask.Services.Interfaces;
 namespace TestTask.Application.Services.Implementations
 {
     /// <summary>
-    /// Service to receive books that match the terms.
+    /// Service to receive books, that match the terms.
     /// </summary>
     public class BookService : IBookService
     {
