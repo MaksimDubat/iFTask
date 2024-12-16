@@ -32,7 +32,7 @@ namespace TestTask.Application.Services.Implementations
             var carolusRexAlbum = new DateTime(2015, 8, 15, 12, 0, 0);
             return await _context.Books
                 .Where(b => b.Title.Contains("Red") &&
-                b.PublishDate > carolusRexAlbum)
+                b.PublishDate >= carolusRexAlbum)
                 .ToListAsync();
         }
     }
